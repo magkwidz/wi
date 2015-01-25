@@ -1,0 +1,17 @@
+d:\panniebieski\documents\visual studio 2013\Projects\D3JSFun\D3JSFun\bin\D3JSFun.dll
+d:\panniebieski\documents\visual studio 2013\Projects\D3JSFun\D3JSFun\bin\D3JSFun.pdb
+d:\panniebieski\documents\visual studio 2013\Projects\D3JSFun\D3JSFun\obj\Debug\D3JSFun.csprojResolveAssemblyReference.cache
+d:\panniebieski\documents\visual studio 2013\Projects\D3JSFun\D3JSFun\obj\Debug\D3JSFun.dll
+d:\panniebieski\documents\visual studio 2013\Projects\D3JSFun\D3JSFun\obj\Debug\D3JSFun.pdb
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\D3JSFun.dll
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\D3JSFun.pdb
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\mscorlib.dll
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\pl\mscorlib.resources.dll
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\normidna.nlp
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\normnfc.nlp
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\normnfd.nlp
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\normnfkc.nlp
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\bin\normnfkd.nlp
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\obj\Debug\D3JSFun.dll
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\obj\Debug\D3JSFun.pdb
+C:\Users\magda_000\Desktop\Projekt WI\D3JSFun\D3JSFun\D3JSFun\obj\Debug\D3JSFun.csprojResolveAssemblyReference.cache
