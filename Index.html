@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Wizualizacja Informacji</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-2" />
+    <script src="Scripts/d3.v3.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsee.css" />
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/ui/1.7.0/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="Scripts/modernizr.js"></script>
+    <script type="text/javascript" src="Scripts/responsee.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/jqtree.css"/>
+    <link rel="stylesheet" href="css/themes/default/style.min.css" />
+    <script src="Scripts/dist/jstree.min.js"></script>
+    <script src="Scripts/balloone.js"></script>
+    <script type="text/javascript" src="jquery.tipsy.js"></script>
+    <link href="tipsy.css" rel="stylesheet" type="text/css" />
+    <style id="dynamic-styles" type="text/css">
+
+ .link {
+  fill: none;
+  stroke: #9ecae1;
+  stroke-width: 1.5px;
+}
+
+
+
+
+        .tool {
+            background: #3acfc8;
+            background-image: -webkit-linear-gradient(top, #3acfc8, #2980b9);
+            background-image: -moz-linear-gradient(top, #3acfc8, #2980b9);
+            background-image: -ms-linear-gradient(top, #3acfc8, #2980b9);
+            background-image: -o-linear-gradient(top, #3acfc8, #2980b9);
+            background-image: linear-gradient(to bottom, #3acfc8, #2980b9);
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            font-family: Arial;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 18px;
+            text-align:center;
+            padding: 10px 20px 10px 20px;
+            text-decoration:double;
+        }
+
+        .d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #3acfc8;
+  border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+
+
+}
+
+.theme0 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #2980B9), color-stop(0.5, #3ACFC8), color-stop(1, #D7F73A));
+  background: -o-linear-gradient(left, #2980B9 0%, #3ACFC8 50%, #D7F73A 100%);
+  background: -moz-linear-gradient(left, #2980B9 0%, #3ACFC8 50%, #D7F73A 100%);
+}
+
+.theme1 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #3182bd), color-stop(0.5, #c6dbef), color-stop(1, #fd8d3c));
+  background: -o-linear-gradient(left, #3182bd 0%, #c6dbef 50%, #fd8d3c 100%);
+  background: -moz-linear-gradient(left, #3182bd 0%, #c6dbef 50%, #fd8d3c 100%);
+}
+
+.theme2 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #9B0DFF), color-stop(0.5, #E82BD1), color-stop(1, #FF8F19));
+  background: -o-linear-gradient(left, #9B0DFF 0%, #E82BD1 50%, #FF8F19 100%);
+  background: -moz-linear-gradient(left, #9B0DFF 0%, #E82BD1 50%, #FF8F19 100%);
+}
+
+.theme3 {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, #005C0A), color-stop(0.5, #80FFEC), color-stop(1, #19FF82));
+  background: -o-linear-gradient(left, #005C0A 0%, #80FFEC 50%, #19FF82 100%);
+  background: -moz-linear-gradient(left, #005C0A 0%, #80FFEC 50%, #19FF82 100%);
+}
+
+    </style>
+
+
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body class="size-1140">
+    <!-- HEADER -->
+    <header>
+        <div class="line">
+            <div class="box">
+                <div class="s-6 l-2">
+                    <img src="img/logo2.png" />
+                </div>
+            </div>
+        </div>
+        <!-- TOP NAV -->
+        <div class="line">
+        </div>
+    </header>
+    <!-- ASIDE NAV AND CONTENT -->
+    <div class="line">
+        <div class="box">
+            <div class="margin">
+                <!-- CONTENT -->
+                <section class="s-12 l-9 right">
+                    <div id="tabs">
+                        <ul class="tool">
+                            <li><a href="#tabs-1">Wizualizacja</a></li>
+                            <li><a href="#tabs-2">Dane</a></li>
+                        </ul>
+                        <div id="tabs-1">
+                            <div id="diagramTree"></div>
+                            <div id="slider"></div>
+                        </div>
+                        <div id="tabs-2">
+                            Dane
+                            <div id="dataTree"></div>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- ASIDE NAV -->
+                <aside class="s-12 l-3">
+                    <div><h3 style="text-align:center"> </h3></div>
+                    <div class="aside-nav" style="border: 1px solid #aaaaaa; border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px;">
+                        <ul>
+                             <li class="tool">KONFIGURACJA
+                            </li>
+                            <li><a>Konfiguracja danych</a>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            Importuj Dane
+                                        <input type="file" name="dataFile" id="fileName" />
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+
+
+                                            <button class="btn btn-success" id="save_as_svg" value="">
+                                                Eksportuj dane jako SVG</button>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a>Opcje wyświetlania</a>
+                                <ul>
+                                    <li>
+                                        <p>
+                                            <input type="checkbox" id="collapse" name="viewValues" value="1" style=" margin:0 0.625em 0 0;" />
+                                            Zwijanie poziomów w drzewie
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <input type="checkbox" id="showText" name="viewValues" value="1" checked="checked" style=" margin:0 0.625em 0 0;" />
+                                            Wyświetlaj nazwy
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <input type="checkbox" id="showTip" name="viewValues" value="1" checked="checked" style=" margin:0 0.625em 0 0;" />
+                                            Wyświetlaj dymki
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            <input type="checkbox" id="showZoom" name="viewValues" value="1" checked="checked" style=" margin:0 0.625em 0 0;" />
+                                            Zoom
+                                        </p>
+                                    </li>
+                                        <p style="text-align:center">
+                                            <input type="button" value="Zastosuj" id="changeParameters" style="text-align:center" />
+                                    
+                                            <input type="button" value="Domyślne" id="defaultParameters"/>
+                                        </p>
+
+                                </ul>
+                            </li>
+                            <li><a>Styl</a>
+                                <ul >
+                                    <li>
+                                        <p>
+                                            Kształt
+
+                                                <select id="figuresParameters" >
+                                                    <option selected="selected" value ="0">kółka</option>
+                                                    <option value="1">kwadraty</option>
+                                                </select>
+                                        </p>
+                                    </li>
+                                    
+                                    <li>
+                                        <p>
+                                          Rozmiar
+                                        <input type="text" id="sizeParameters" value="5" min="3" max="10"/>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>Motyw 
+                                                <select  style="text-align:center; width:100px" id="themeParamters" >
+                                                    <option class="theme0" selected="selected" value ="0">1</option>
+                                                    <option class="theme1" value ="1">2</option>
+                                                    <option class="theme2" value ="2">3</option>
+                                                    <option class="theme3" value ="3">4</option>
+                                                </select>
+                                        </p>
+                                    </li>
+                                    
+                                        <p style="text-align:center">
+                                            <input type="button" value="Zastosuj" id="styleChangeParameters" style="text-align:center" />
+                                        </p>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="line">
+        <div class="s-12 l-6">
+            <p>2014 Magdalena Kwidzińska, All Rights Reserved</p>
+        </div>
+        <div class="s-12 l-6">
+            <p class="right">Wizualizacja Informacji</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+    $(function () {
+        $("#tabs").tabs();
+    });
+</script>
+
